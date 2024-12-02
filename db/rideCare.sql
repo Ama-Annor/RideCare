@@ -1,7 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
 -- https://www.phpmyadmin.net/
---
 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -17,6 +15,10 @@ SET time_zone = "+00:00";
 --
 -- Database: `rideCare`
 --
+
+DROP DATABASE IF EXISTS rideCare;
+CREATE DATABASE rideCare;
+USE rideCare;
 
 -- --------------------------------------------------------
 
