@@ -21,7 +21,7 @@
             <input type="checkbox" id="check">
             <div class="form">
                 <header>Login</header>
-                <form method="POST" action="">
+                <form method="post">
                     <div id="error" class="error"></div>
                     <div id="success" class="success"></div>
 
