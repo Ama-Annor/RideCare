@@ -9,7 +9,7 @@
 
 body {
   width: 100%;
-  background: #54177c;
+  background: #008080;
 }
 
 .parent {
@@ -92,7 +92,7 @@ body {
 }
 
 button {
-  background: #54177c;
+  background: #008080;
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -116,7 +116,7 @@ button {
 }
 
 .signup label {
-  color: #54177c;
+  color: #008080;
   cursor: pointer;
 }
 
