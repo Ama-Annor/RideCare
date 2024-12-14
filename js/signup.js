@@ -4,6 +4,7 @@ $("#submit").click(function (event) {
   
     $.ajax({
       url: "../actions/signup_action.php",
+      // url: "../functions/functions.php",
       method: "post",
       data: JSON.stringify({
         username: $("#uname").val(),

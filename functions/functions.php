@@ -2,13 +2,14 @@
 /*functions.php */
 session_start();
 
-require '../settings/connection.php';
+require __DIR__.'/../settings/connection.php';
 function error422($message)
 {
     $data = [
         'status' => 422,
         'message' => $message,
     ];
+    
     header("HTTP/1.0 422 Unprocessable Entity");
     return json_encode($data);
 }
