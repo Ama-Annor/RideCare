@@ -1,137 +1,217 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Josefin Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 body {
-  width: 100%;
-  background: #008080;
+    width: 100%;
+    min-height: 100vh;
+    background: #f5f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .parent {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem;
 }
 
+/* Logo Section */
 .logo {
-  position: absolute;
-  top: 50%;
-  right: 75%;
-  transform: translate(50%, -50%);
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
 }
 
+.logo img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Form Container */
 .container {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(100%, -50%);
-  max-width: 430px;
-  width: 100%;
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    max-width: 430px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: slideUp 0.5s ease-out;
 }
 
-.container .registration {
-  display: none;
-}
-
-#check:checked ~ .registration {
-  display: block;
-}
-
-#check:checked ~ .login {
-  display: none;
-}
-
-#check {
-  display: none;
-}
-
+/* Form Styling */
 .container .form {
-  padding: 2rem;
+    padding: 2.5rem;
 }
 
 .form header {
-  font-size: 2rem;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    color: #008080;
 }
 
 .form input {
-  height: 60px;
-  width: 100%;
-  padding: 0 15px;
-  font-size: 17px;
-  margin-bottom: 1.3rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
 .form input:focus {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    border-color: #008080;
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
 }
 
 .form a {
-  font-size: 16px;
-  color: #54177c;
-  text-decoration: none;
+    font-size: 16px;
+    color: #008080;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .form a:hover {
-  text-decoration: underline;
+    color: #006666;
 }
 
 button {
-  background: #008080;
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  transition: 0.4s;
-  height: 60px;
-  width: 100%;
-  padding: 0 15px;
-  font-size: 17px;
-  margin-bottom: 1.3rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
-  color: #fff;
+    width: 100%;
+    height: 60px;
+    background: #008080;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: #006666;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 128, 128, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 .signup {
-  font-size: 17px;
-  text-align: center;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
 .signup label {
-  color: #008080;
-  cursor: pointer;
+    color: #008080;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .signup label:hover {
-  text-decoration: underline;
+    color: #006666;
 }
 
+/* Error Messages */
 .error {
-  color: red;
-  font-size: 15px;
-  margin-bottom: 5px;
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: #fff5f5;
+    border: 1px solid #ffcdd2;
 }
 
 #success .alert {
-  color: rgb(10, 190, 10);
-  font-size: 15px;
-  margin-bottom: 5px;
+    color: #28a745;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: #f0fff4;
+    border: 1px solid #c3e6cb;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 950px) {
+    .parent {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .logo {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        border-radius: 0;
+    }
+
+    .form {
+        padding: 2rem;
+    }
+
+    .form header {
+        font-size: 1.8rem;
+    }
+}
+
+/* Registration Form Toggle */
+.container .registration {
+    display: none;
+}
+
+#check:checked ~ .registration {
+    display: block;
+}
+
+#check:checked ~ .login {
+    display: none;
+}
+
+#check {
+    display: none;
 }

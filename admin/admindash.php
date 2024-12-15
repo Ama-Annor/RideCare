@@ -4,6 +4,7 @@ include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
 $user_id = getUserID();
+$gender = getGender();
 if ($user_role != 1) {
     header("Location: ../view/userdash.php");
 }
@@ -70,8 +71,8 @@ if ($user_role != 1) {
                 <li><a href="../admin/admindash.php"><i class="fas fa-home"></i>Home</a></li>
                 <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
                 <li><a href="../view/viewreports.php"><i class="fas fa-comments"></i></i>View Reports</a></li>
-                <li><a href="../admin/addrhc.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
-                <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
+                <li><a href="../admin/rhcadd.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
+                <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/forum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                 <?php } ?> <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
             </ul>
 
@@ -86,15 +87,15 @@ if ($user_role != 1) {
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <span>Find Driver</span>
                     </a>
-                    <a href="../admin/addrhc.php" class="quick-action">
+                    <a href="../admin/rhcadd.php" class="quick-action">
                         <i class="fas fa-comments"></i>
                         <span>Add RHC Driver</span>
                     </a>
-                    <a href="../view/rhcdisplay.php" class="quick-action">
+                    <a href="../admin/rhcdisplay.php" class="quick-action">
                         <i class="fas fa-address-card"></i>
                         <span>View RHC</span>
                     </a>
-                    <a href="../view/sayfforum.php" class="quick-action">
+                    <a href="../view/forum.php" class="quick-action">
                         <i class="fa-solid fa-users"></i>
                         <span>Forum</span>
                     </a>

@@ -13,7 +13,8 @@ $inputData = json_decode(file_get_contents("php://input"));
 $res;
 
 if (empty($inputData)) {
-    $res["msg"] = "No data received";
+    $res["message"] = "No data received";
+    $res["status"] = "Failed";
     echo json_encode($res);
     exit();
 }

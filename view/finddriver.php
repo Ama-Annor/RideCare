@@ -3,6 +3,7 @@ include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
 $user_id = getUserID();
+$gender = getGender();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +27,8 @@ $user_id = getUserID();
                     <li><a href="../admin/admindash.php"><i class="fas fa-home"></i>Home</a></li>
                     <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
                     <li><a href="../view/viewreports.php"><i class="fas fa-comments"></i></i>View Reports</a></li>
-                    <li><a href="../admin/addrhc.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
-                    <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
+                    <li><a href="../admin/rhcadd.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
+                    <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/forum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                     <?php } ?> <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
                 </ul>
             </div>
@@ -44,7 +45,7 @@ $user_id = getUserID();
                     <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
                     <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                     <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>
-                    <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
+                    <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/forum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                     <?php } ?> <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
                 </ul>
             </div>
@@ -66,18 +67,20 @@ $user_id = getUserID();
                     </div>
 
                 </div>
-                <div class="error" id="error" style="color:#54177c;display: flex; justify-content: center; align-items: center;margin-top:10px;"> </div>
+                <div class="error" id="error" style="color:#008080; display: flex; justify-content: center; align-items: center; margin-top:20px; font-size: 24px; font-weight: bold;"> </div>
 
-                <div class="results" id="results" style="width:80%;display: flex;  margin-left:70px;  align-items: center;">
-                    <center>
-                        <h1>
-                            Invest in <span class="spec" style="color:#E41D9E">
-                                safety
-                            </span> today, <br>reap the rewards of tomorrow's peace of mind.
-                        </h1>
-                    </center>
+                <div class="results" id="results" style="width:80%; display: flex; margin-left:70px; align-items: center;">
                 </div>
-                <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#54177c;float:right;width:30px;height:30px;font-size:27"></i>
+
+                <div style="position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); text-align: center; opacity: 0.7;">
+                    <h1 style="color: #666;">
+                        Invest in <span class="spec" style="color:#E41D9E">
+                            safety
+                        </span> today, <br>reap the rewards of tomorrow's peace of mind.
+                    </h1>
+                </div>
+
+                <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#008080;float:right;width:30px;height:30px;font-size:27"></i>
 
 
             </div>

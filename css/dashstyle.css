@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #cfcef2;
+  background-color: #f5f7fa;
 }
 
 .wrapper {
@@ -21,7 +21,7 @@ body {
 .wrapper .sidebar {
   width: 225px;
   height: 100%;
-  background: #54177c;
+  background: #008080;
   padding: 30px 0px;
   position: fixed;
 }
@@ -37,13 +37,13 @@ body {
 
 .wrapper .sidebar ul li {
   padding: 15px;
-  border-bottom: 1px solid #cfcef2;
+  border-bottom: 1px solid #f5f7fa;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .wrapper .sidebar ul li a {
-  color: #cfcef2;
+  color: #f5f7fa;
   display: block;
 }
 
@@ -52,7 +52,7 @@ body {
 }
 
 .wrapper .sidebar ul li:hover {
-  background-color: #54177c;
+  background-color: #008080;
 }
 
 .wrapper .sidebar ul li:hover a {
@@ -76,7 +76,7 @@ body {
 .wrapper .main_content .header {
   padding: 30px;
   background: #fff;
-  color: #54177c;
+  color: #008080;
   font-size: 30px;
   border-bottom: 1px solid #e0e4e8;
 }
@@ -157,8 +157,8 @@ body {
 }
 
 .main_content .info .userprof {
-  border: 1px solid #cfcef2;
-  background-color: #54177c;
+  border: 1px solid #f5f7fa;
+  background-color: #008080;
   color: #cfcef2;
   margin-right: 100px;
   margin-top: 60px;
@@ -264,7 +264,7 @@ select {
 
 button {
   color: #fff;
-  background: #54177c;
+  background: #008080;
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -306,7 +306,7 @@ button {
 .main_content .info .searchboxwrapper .searchboxitem .icon {
   position: absolute;
   top: 16px;
-  color: #54177c;
+  color: #008080;
   font-size: 18px;
   display: flex;
   width: 20px;
@@ -320,7 +320,7 @@ button {
   border-radius: 25px;
   border: 0;
   display: inline;
-  background: #54177c;
+  background: #008080;
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.5s ease;
@@ -328,7 +328,7 @@ button {
 }
 
 .main_content .info .searchboxwrapper .searchboxitem button:hover {
-  background: #54177c;
+  background: #008080;
   color: #e41d9e;
 }
 
@@ -405,7 +405,7 @@ button {
 
 .main_content .info .results .searchresult .link a {
   font-style: italic;
-  color: #54177c;
+  color: #008080;
   text-decoration: none;
   font-size: 20px;
 }
@@ -495,12 +495,12 @@ button {
 }
 .radio label {
   position: relative;
-  color: #54177c;
+  color: #008080;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.8em;
-  border: 3px solid #54177c;
+  border: 3px solid #008080;
   padding: 10px;
   border-radius: 0.5em;
 }
@@ -508,7 +508,7 @@ button {
   content: "";
   height: 1em; /* Adjusted size */
   width: 1em; /* Adjusted size */
-  border: 1px solid #54177c; /* Adjusted border thickness */
+  border: 1px solid #008080; /* Adjusted border thickness */
   border-radius: 50%;
 }
 
@@ -516,11 +516,11 @@ button {
   height: 0.5em; /* Adjusted size */
   width: 0.5em; /* Adjusted size */
   border: 0.25em solid #ffffff; /* Adjusted border thickness */
-  background-color: #54177c;
+  background-color: #008080;
 }
 
 .radio input[type="radio"]:checked + label {
-  background-color: #54177c;
+  background-color: #008080;
   color: #ffffff;
 }
 .rating-box {
@@ -563,7 +563,7 @@ table {
 }
 
 th {
-  background-color: #54177c;
+  background-color: #008080;
   color: white;
   border: 1px solid #000;
 }
@@ -625,11 +625,11 @@ tbody td {
 .main_content .info .dashb .notif .notif_item .text h3 {
   font-size: 14px;
   margin-bottom: 5px;
-  color: #54177c;
+  color: #008080;
 }
 
 .main_content .info .dashb .notif .notif_item .text p {
-  color: #54177c;
+  color: #008080;
 }
 
 .main_content .info .dashb .notif .notif_item .icon,
@@ -640,7 +640,7 @@ tbody td {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  color: #54177c;
+  color: #008080;
 }
 
 .main_content .info .dashb .notif .notif_item .icon i {
@@ -652,7 +652,7 @@ tbody td {
   top: -15px;
   right: -15px;
   font-size: 20px;
-  color: #54177c;
+  color: #008080;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease;
   cursor: pointer;
@@ -677,11 +677,11 @@ tbody td {
 }
 
 .main_content .info .dashb .notif .notif_item.cmnt_item .close {
-  color: #54177c;
+  color: #008080;
 }
 
 .main_content .info .dashb .notif .notif_item.like_item .close {
-  color: #54177c;
+  color: #008080;
 }
 
 .main_content .info .userprof .reviews {
@@ -765,7 +765,7 @@ tbody td {
   align-self: center;
 }
 .card2 {
-  background: #54177c;
+  background: #008080;
   color: #fff;
 }
 
@@ -787,5 +787,5 @@ tbody td {
 #editAction,
 #deleteAction {
   font-size: 20px;
-  color: #54177c;
+  color: #008080;
 }

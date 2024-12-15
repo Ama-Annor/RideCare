@@ -5,10 +5,10 @@ $user_role = getUserRole();
 $user_id = getUserID();
 $gender = getGender();
 
-if ($gender == 1) {
-    header("Location: ../view/userdash.php");
-    die();
-}
+// if ($gender == 1) {
+//     header("Location: ../view/userdash.php");
+//     die();
+// }
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ if ($gender == 1) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Sayf Space</title>
+    <title>We Care - Supportive Space</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -35,8 +35,8 @@ if ($gender == 1) {
                     <li><a href="../admin/admindash.php"><i class="fas fa-home"></i>Home</a></li>
                     <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
                     <li><a href="../view/viewreports.php"><i class="fas fa-comments"></i></i>View Reports</a></li>
-                    <li><a href="../admin/addrhc.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
-                    <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
+                    <li><a href="../admin/rhcadd.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
+                    <?php if ($gender == 2 && $user_role == 1) { ?> <li><a href="../view/forum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                     <?php } ?> <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
                 </ul>
             </div>
@@ -53,14 +53,14 @@ if ($gender == 1) {
                     <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
                     <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                     <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>
-                    <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
+                    <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/forum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                     <?php } ?> <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
                 </ul>
             </div>
         <?php } ?>
         <div class="main_content">
             <div class="header">
-                <div class="headtext">Sayf Space</div>
+                <div class="headtext">Let Us Know!</div>
             </div>
             <div class="info" style="display:block;justify-content:center;">
                 <a href="../view/addpost.php"><button>Add Post</button></a>
@@ -69,7 +69,7 @@ if ($gender == 1) {
 
             </div>
             <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color: white;
-  background-color: #54177c;
+  background-color: #008080;
   width: 30px;
   height: 30px;
   font-size: 27px;
@@ -149,7 +149,7 @@ if ($gender == 1) {
                             response = data;
 
                             alert("Post deleted successfully");
-                            window.location.href = "../view/sayfforum.php";
+                            window.location.href = "../view/forum.php";
                         }
                     },
                     error: (error) => {

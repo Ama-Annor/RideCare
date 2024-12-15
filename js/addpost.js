@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
               $(".alert").remove();
             }, 20000);
           }
-          window.location.href = "../view/sayfforum.php";
+          window.location.href = "../view/forum.php";
         },
         error: (error) => {
           $("#error").html(error.error);
