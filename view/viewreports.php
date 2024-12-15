@@ -1,7 +1,7 @@
 <!-- viewreports.php -->
 <?php
 include "../settings/core.php";
-if(session_status() == PHP_SESSION_NONE){
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 ifLoggedIn();
@@ -21,7 +21,7 @@ $gender = getGender();
 
 </head>
 
-<body>
+<body style="background-color: #f5f7fa !important;">
     <div class="wrapper">
         <?php if ($user_role == 1) { ?>
             <div class="sidebar">
@@ -63,7 +63,7 @@ $gender = getGender();
                 <table>
                     <thead>
                         <tr>
-                            <?php 
+                            <?php
                             if ($_SESSION['user_role'] == 1) { ?>
                                 <th>User Email</th>
                             <?php } ?>
@@ -71,6 +71,8 @@ $gender = getGender();
                             <th>Company</th>
                             <th>Incident Date</th>
                             <th>Incident Description</th>
+                            <th>Actions</th>
+
                         </tr>
                     </thead>
                     <tbody id="display_report_data">

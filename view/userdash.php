@@ -116,7 +116,7 @@ $gender = getGender();
   </style>
 </head>
 
-<body>
+<body style="background-color: #f5f7fa !important;">
   <div class="wrapper">
     <div class="sidebar">
       <div class="logo">

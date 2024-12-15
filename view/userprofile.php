@@ -16,7 +16,7 @@ $gender = getGender();
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="background-color: #f5f7fa !important;">
     <div class="wrapper">
         <div class="sidebar">
             <div class="logo">

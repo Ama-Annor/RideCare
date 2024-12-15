@@ -128,7 +128,7 @@ body {
   font-size: 23px;
   font-weight: 600;
   text-align: center;
-  color: #54177c;
+  color: #f5f7fa;
 }
 
 .main_content .info .reptform .left-side::before {
@@ -159,7 +159,7 @@ body {
 .main_content .info .userprof {
   border: 1px solid #f5f7fa;
   background-color: #008080;
-  color: #cfcef2;
+  color: #f5f7fa;
   margin-right: 100px;
   margin-top: 60px;
   height: max-content;
@@ -644,7 +644,7 @@ tbody td {
 }
 
 .main_content .info .dashb .notif .notif_item .icon i {
-  color: #54177c;
+  color: #f5f7fa;
   font-size: 18px;
 }
 .main_content .info .dashb .notif .notif_item .close {

@@ -23,7 +23,7 @@ $gender = getGender();
 
 </head>
 
-<body>
+<body style="background-color: #f5f7fa !important;">
     <div class="wrapper">
         <?php if ($user_role == 1) { ?>
 

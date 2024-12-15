@@ -53,6 +53,25 @@
             </div>
         </div>
     </div>
+    <script>
+        // Show error div only when there are errors
+        const errorDiv = document.getElementById('error');
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.target.textContent) {
+                    errorDiv.style.display = 'block';
+                } else {
+                    errorDiv.style.display = 'none';
+                }
+            });
+        });
+
+        observer.observe(errorDiv, { 
+            characterData: true,
+            childList: true,
+            subtree: true 
+        });
+    </script>
     <script src="../js/signup.js"></script>
 
 </body>

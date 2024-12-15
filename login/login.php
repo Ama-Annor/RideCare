@@ -22,7 +22,7 @@
             <div class="form">
                 <header>Login</header>
                 <form method="post">
-                    <div id="error" class="error"></div>
+                    <div id="error" class="error" style="display: none;"></div>
                     <div id="success" class="success"></div>
 
                     <input type="text" placeholder="Enter your username" name="username" id="username">
@@ -39,6 +39,23 @@
         </div>
     </div>
     <script>
+        // Show error div only when there are errors
+        const errorDiv = document.getElementById('error');
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.target.textContent) {
+                    errorDiv.style.display = 'block';
+                } else {
+                    errorDiv.style.display = 'none';
+                }
+            });
+        });
+
+        observer.observe(errorDiv, { 
+            characterData: true,
+            childList: true,
+            subtree: true 
+        });
     </script>
     <script src="../js/login.js"></script>
 

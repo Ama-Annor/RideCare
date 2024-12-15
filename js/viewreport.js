@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
               result += "<td class='email'>" + element.incident_date + "</td>";
               result +=
                 "<td class='location'>" + element.report_description + "</td>";
+              result += "<td class='action'><button class='btn btn-danger delete-btn' data-id='" + element.report_id + "'>Delete</button></td>";
               result += "</tr>";
             });
           } else {
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 result += "<td class='email'>" + element.incident_date + "</td>";
                 result +=
                   "<td class='location'>" + element.report_description + "</td>";
+                result += "<td><button class='btn btn-danger delete-btn' data-id='" + element.report_id + "'>Delete</button></td>";
                 result += "</tr>";
               }
             });
