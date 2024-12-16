@@ -23,7 +23,7 @@
                 <form method="post">
                     <div id="error" class="error"></div>
 
-                    <input type="text" name="uname" id="uname" pattern="[^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" placeholder="Username (Please choose a username that can not identify you)">
+                    <input type="text" name="uname" id="uname" pattern="[^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" placeholder="Username (one that will not identify you)">
                     <div class="radio-container">
                         <label style="color:gray;" for="gender">Gender </label>
                     </div>
@@ -54,11 +54,13 @@
         </div>
     </div>
     <script>
-        // Show error div only when there are errors
+        // Hide error div initially and show only when there are errors
         const errorDiv = document.getElementById('error');
+        errorDiv.style.display = 'none'; // Hide initially
+        
         const observer = new MutationObserver(function(mutations) {
             mutations.forEach(function(mutation) {
-                if (mutation.target.textContent) {
+                if (mutation.target.textContent.trim()) { // Check if text content is non-empty after trimming
                     errorDiv.style.display = 'block';
                 } else {
                     errorDiv.style.display = 'none';

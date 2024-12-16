@@ -74,13 +74,10 @@ $gender = getGender();
 
                 <div style="position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); text-align: center; opacity: 0.7;">
                     <h1 style="color: #666;">
-                        Invest in <span class="spec" style="color:#E41D9E">
-                            safety
-                        </span> today, <br>reap the rewards of tomorrow's peace of mind.
+                    Ride Care: Your Journey, Your Safety, Our Priority. 
                     </h1>
                 </div>
 
-                <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#008080;float:right;width:30px;height:30px;font-size:27"></i>
 
 
             </div>

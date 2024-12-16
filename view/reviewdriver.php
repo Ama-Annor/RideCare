@@ -225,7 +225,7 @@ $gender = getGender();
             <div class="info">
                 <div class="reptform">
                     <div class="center">
-                        <p>Your feedback is invaluable in ensuring a safe and enjoyable experience for all passengers.
+                        <p>Ensuring a safe and enjoyable experience for all passengers starts with your feedback.
                         </p>
                         <form class="form" id="form">
                             <div id="error" class="error"></div>
@@ -247,7 +247,7 @@ $gender = getGender();
                             <input type="text" id="plateNumber" name="plate_number" class="input-field" pattern="^[A-Z]{2,3}-\d{1,4}-[A-Z]?$|^[\d]{1,4}-[A-Z]{2,3}-[A-Z]?$|^[A-Z]{1,2}-\d{1,4}$" placeholder="Car Plate Number" required>
                             <div class="ratingsstar">
                                 <div class="rating-box">
-                                    <header>How was your experience?</header>
+                                    <header>Rate your experience?</header>
                                     <div class="stars">
                                         <i class="fa-solid fa-star" id="star1"></i>
                                         <i class="fa-solid fa-star" id="star2"></i>

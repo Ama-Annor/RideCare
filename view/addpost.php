@@ -3,6 +3,7 @@ include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
 $user_id = getUserID();
+$gender = getGender();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,18 +38,8 @@ $user_id = getUserID();
                 <div class="headtext">Add Post</div>
             </div>
             <div class="info">
-                <div class="reptform">
-                    <div class="left-side">
-                        <i class="fa-brands fa-speakap" style="color:#008080; font-size: 200px"></i>
-                        <div class="shorttext">
-                            Be a part of something bigger.
-                            <br><br>
-                            Make others safe by <span class="spec" style="color:#E41D9E">
-                                saying if</span>.
-                        </div>
-                    </div>
-                    <div class="right-side">
-                        <p>What's on your mind? Tell the Us</p>
+                    <div class="center">
+                        <p>Share your thoughts with us.</p>
                         <div class="error" id="error"></div>
                         <form class="form" id="form" method="post">
                             <br>
@@ -68,3 +59,5 @@ $user_id = getUserID();
 </body>
 
 </html>
+
+
