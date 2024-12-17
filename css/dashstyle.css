@@ -141,77 +141,98 @@ body {
   transform: translateY(-50%);
   background: #e41d9e;
 }
-
 .main_content .info .reptform .right-side {
   margin-left: 300px;
   width: 55%;
-  height: 100%;
   height: fit-content;
+  padding: 30px;
 }
 
 .main_content .info .reptform .right-side p {
-  margin-top: 40px;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-bottom: 30px;
+  margin: 25px 40px;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
 .main_content .info .userprof {
-  border: 1px solid #f5f7fa;
-  background-color: #008080;
-  color: #f5f7fa;
-  margin-right: 100px;
-  margin-top: 60px;
-  height: max-content;
-  box-shadow: 0 15px 35px rgba(50, 100, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  border-radius: 10px;
+  background: linear-gradient(135deg, #008080, #006666);
+  color: #ffffff;
+  margin: 40px 100px 40px 40px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.main_content .info .userprof:hover {
+  transform: translateY(-5px);
 }
 
 .main_content .info .userprof .username {
-  margin-top: 4rem;
+  margin-top: 2rem;
   text-align: center;
   order: 1;
 }
+
 .main_content .info .userprof .username h1 {
-  margin-bottom: 0.6rem;
-  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffffff, #e6e6e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .main_content .info .userprof .username span {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
 }
 
 .main_content .info .userprof .profdescription {
-  margin-top: 2.5rem;
+  margin: 2.5rem auto;
   text-align: center;
   order: 2;
+  max-width: 600px;
 }
 
 .main_content .info .userprof .profdescription p {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.8rem;
   font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
 .main_content .info .userprof .profstats {
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
+  gap: 3rem;
+  margin: 3rem 0;
   list-style-type: none;
   order: 3;
-  margin-bottom: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
 .main_content .info .userprof .profstats li {
-  padding: 0 1.5rem;
+  padding: 0.5rem 1rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.main_content .info .userprof .profstats li:hover {
+  transform: scale(1.05);
 }
 
 .main_content .info .userprof .profstats li span {
   display: block;
-  margin-bottom: 0.1rem;
-  font-weight: bold;
-  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ffffff;
 }
 
 .form {
@@ -332,19 +353,11 @@ button {
   color: #e41d9e;
 }
 
-.main_content
-  .info
-  .searchboxwrapper
-  .searchboxitem.searchboxitem1
-  .input_search {
+.main_content .info .searchboxwrapper .searchboxitem.searchboxitem1 .input_search {
   padding: 15px 150px 15px 55px;
 }
 
-.main_content
-  .info
-  .searchboxwrapper
-  .searchboxitem.searchboxitem2
-  .input_search {
+.main_content .info .searchboxwrapper .searchboxitem.searchboxitem2 .input_search {
   padding: 15px 150px 15px 55px;
 }
 
@@ -371,116 +384,91 @@ button {
 }
 
 .main_content .info .results {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
 }
 
 .main_content .info .results .searchresult {
-  border: #fff 1px solid;
-  width: 90%;
-  margin-bottom: 30px;
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
   display: flex;
-  padding: 10px;
-  background-color: white;
-  border-radius: 10px;
-  transition: all 0.2s;
-  box-shadow: 0px 6px 10px rgba(74, 70, 74, 0.414);
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main_content .info .results .searchresult:hover {
+  transform: translateY(-5px);
 }
 
 .main_content .info .results .searchresult .rating {
-  padding: 20px;
-  margin-left: 55px;
-  margin-right: 35px;
-}
-
-.main_content .info .results .searchresult .link {
-  padding: 20px;
-  margin-left: 65px;
-  margin-top: 60px;
-}
-
-.main_content .info .results .searchresult .link a {
-  font-style: italic;
-  color: #008080;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.main_content .info .results .searchresult .rating .heading {
   display: flex;
-  width: 80px;
-  justify-content: center;
   align-items: center;
-}
-
-.main_content .info .results .searchresult .rating .heading p {
-  text-align: center;
-  color: #000;
-  font-weight: bolder;
+  gap: 15px;
 }
 
 .main_content .info .results .searchresult .rating .ratingbox {
-  background-color: #e41d9e;
-  height: 80px;
-  width: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: linear-gradient(135deg, #008080, #006666);
+  border-radius: 12px;
+  padding: 15px 25px;
+  color: white;
 }
 
 .main_content .info .results .searchresult .rating .ratingbox p {
-  font-size: 50px;
-  color: white;
-  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .main_content .info .results .searchresult .rating .text {
-  display: flex;
-  width: 80px;
-  justify-content: center;
-  align-items: center;
-}
-
-.main_content .info .results .searchresult .rating .text p {
-  color: #000;
-  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
 }
 
 .main_content .info .results .searchresult .details {
-  margin-left: 40px;
-  margin-top: 40px;
-  justify-content: right;
+  padding: 15px 0;
+  border-top: 1px solid #eee;
 }
 
 .main_content .info .results .searchresult .details .dname {
-  font-size: 20px;
-  font-weight: 900;
-  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
 }
 
-.main_content .info .results .searchresult .details .dname {
-  font-size: 20px;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.main_content .info .results .searchresult .details .dcplate {
-  font-size: 17px;
-  margin-bottom: 10px;
-}
-
+.main_content .info .results .searchresult .details .dcplate,
 .main_content .info .results .searchresult .details .dcomps {
-  font-size: 17px;
-  margin-bottom: 10px;
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.main_content .info .results .searchresult .link {
+  margin-top: auto;
+  text-align: right;
+}
+
+.main_content .info .results .searchresult .link a {
+  color: #008080;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.main_content .info .results .searchresult .link a:hover {
+  color: #006666;
 }
 
 .radio-container label:hover {
   cursor: pointer;
 }
+
 .radio-container label {
   color: gray;
   font-size: 16px;
@@ -489,10 +477,12 @@ button {
 .radio input[type="radio"] {
   display: none;
 }
+
 .radio {
   margin-top: 3px;
   margin-bottom: 20px;
 }
+
 .radio label {
   position: relative;
   color: #008080;
@@ -504,18 +494,19 @@ button {
   padding: 10px;
   border-radius: 0.5em;
 }
+
 .radio label:before {
   content: "";
-  height: 1em; /* Adjusted size */
-  width: 1em; /* Adjusted size */
-  border: 1px solid #008080; /* Adjusted border thickness */
+  height: 1em;
+  width: 1em;
+  border: 1px solid #008080;
   border-radius: 50%;
 }
 
 .radio input[type="radio"]:checked + label:before {
-  height: 0.5em; /* Adjusted size */
-  width: 0.5em; /* Adjusted size */
-  border: 0.25em solid #ffffff; /* Adjusted border thickness */
+  height: 0.5em;
+  width: 0.5em;
+  border: 0.25em solid #ffffff;
   background-color: #008080;
 }
 
@@ -523,35 +514,41 @@ button {
   background-color: #008080;
   color: #ffffff;
 }
+
 .rating-box {
   position: relative;
   width: fit-content;
   background: #fff;
-  padding: 10px 20px 15px;
-  border-radius: 25px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-  margin-left: 140px;
+  padding: 15px 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
 }
+
 .rating-box header {
-  font-size: 17px;
-  color: #dadada;
-  font-weight: 500;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
 }
+
 .rating-box .stars {
   display: flex;
   align-items: center;
-  gap: 25px;
+  justify-content: center;
+  gap: 15px;
 }
+
 .stars i {
-  color: #e6e6e6;
-  font-size: 15px;
+  color: #ddd;
+  font-size: 24px;
   cursor: pointer;
   transition: color 0.2s ease;
 }
+
 .stars i.active {
-  color: #ff9c1a;
+  color: #ffd700;
 }
 
 table {
@@ -788,4 +785,73 @@ tbody td {
 #deleteAction {
   font-size: 20px;
   color: #008080;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+h1#drivername {
+    font-size: 44.8px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.2;  /* Ensures proper line height */
+    padding: 10px 0;
+    overflow: visible;  /* Prevents content from being cut */
+    position: relative; /* Ensures proper stacking */
+    width: 100%;
+    text-align: center;
+}
+
+/* If the name is inside a container, let's make sure that container isn't restricting height */
+.driver-container {
+    min-height: fit-content;
+    overflow: visible;
+    margin-bottom: 20px;
+}
+
+/* Ensure parent elements don't clip content */
+.searchresult, 
+.result-card, 
+.driver-info {
+    overflow: visible;
+    min-height: fit-content;
+}
+
+h1#usernameh1 {
+    font-size: 44.8px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.2;  /* Ensures proper line height */
+    padding: 10px 0;
+    overflow: visible;  /* Prevents content from being cut */
+    position: relative; /* Ensures proper stacking */
+    width: 100%;
+    text-align: center;
+}
+
+/* Ensure the container doesn't clip the username */
+.user-profile-container {
+    min-height: fit-content;
+    overflow: visible;
+    margin-bottom: 20px;
+}
+
+/* Make sure parent elements don't restrict the height */
+.profile-header,
+.profile-info {
+    overflow: visible;
+    min-height: fit-content;
 }

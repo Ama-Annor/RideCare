@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
@@ -9,8 +10,9 @@ $gender = getGender();
 <html lang="en">
 
 <head>
+    <!-- Meta tags and resources -->
     <meta charset="UTF-8">
-    <title>User Profile</title>
+    <title>Profile - User</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -18,6 +20,7 @@ $gender = getGender();
 
 <body style="background-color: #f5f7fa !important;">
     <div class="wrapper">
+        <!-- Sidebar navigation -->
         <div class="sidebar">
             <div class="logo">
                 <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -33,10 +36,12 @@ $gender = getGender();
                 <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
             </ul>
         </div>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
                 <div class="headtext">User Profile</div>
             </div>
+            <!-- User profile information -->
             <div class="info">
                 <div class="userprof">
                     <div class="username" id="username">
@@ -57,6 +62,7 @@ $gender = getGender();
         </div>
     </div>
     </div>
+    <!-- Scripts -->
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/profile.js"></script>
 </body>

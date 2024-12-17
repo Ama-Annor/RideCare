@@ -1,5 +1,4 @@
-// /**search.js */
-
+// Search functionality for finding drivers by name or plate number
 $("#submit").click(function (event) {
     event.preventDefault();
     $("#error").html("");
@@ -8,6 +7,7 @@ $("#submit").click(function (event) {
       $("#error").html("Please input the name of a driver or a car plate number");
     }
   
+    // Make AJAX request to search for drivers
     $.ajax({
       url: "../actions/searchdriver_action.php",
       method: "post",
@@ -22,6 +22,7 @@ $("#submit").click(function (event) {
           var resultContainer = $("#results");
           resultContainer.empty();
   
+          // Process and display search results
           var results = response.data;
           if (results.length === 0) {
             resultContainer.html("<p>No results found</p>");
@@ -29,6 +30,7 @@ $("#submit").click(function (event) {
             var resultsPerRow = 2;
             var result = "";
   
+            // Build HTML for each search result
             for (var index = 0; index < results.length; index++) {
               if (index % resultsPerRow === 0) {
                 resultContainer.append('<div class="row">');
@@ -65,6 +67,7 @@ $("#submit").click(function (event) {
                 element.did +
                 "'> View Driver Details </a>";
   
+              // Add warning icon for low rated or frequently reported drivers
               if (element.incident_reports > 5 || element.average_rating < 2) {
                 result +=
                   "<i class='fa-solid fa-triangle-exclamation' style='color:red'></i><span style='color:red'>";
@@ -72,6 +75,7 @@ $("#submit").click(function (event) {
               result += "</div>";
               result += "</div>";
   
+              // Add completed row to container
               if (
                 (index + 1) % resultsPerRow === 0 ||
                 index === results.length - 1
@@ -84,6 +88,7 @@ $("#submit").click(function (event) {
           }
         }
       },
+      // Handle any errors from the search request
       error: (error) => {
         var responseData = error.responseJSON.message;
         $("#error").html(responseData);

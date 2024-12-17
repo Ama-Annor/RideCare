@@ -1,4 +1,4 @@
-/**pagereviewdriver.js */
+
 document.addEventListener("DOMContentLoaded", function () {
     const stars = document.querySelectorAll(".stars i");
   
@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     });
+
+    //Getting Driver ID
   
     function getUrlParameter(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

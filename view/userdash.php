@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
@@ -13,6 +14,7 @@ $gender = getGender();
   <title>User Home</title>
   <link rel="stylesheet" href="../css/dashstyle.css">
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <!-- CSS styles for dashboard layout and components -->
   <style>
     :root {
         --sidebar-teal: #008080;
@@ -117,7 +119,9 @@ $gender = getGender();
 </head>
 
 <body style="background-color: #f5f7fa !important;">
+  <!-- Main wrapper container -->
   <div class="wrapper">
+    <!-- Sidebar navigation -->
     <div class="sidebar">
       <div class="logo">
         <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -133,10 +137,12 @@ $gender = getGender();
         <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 120px;"></i> Logout</a></li>
       </ul>
     </div>
+    <!-- Main content area -->
     <div class="main_content">
       <div class="header">
         <div class="headtext">User Home</div>
       </div>
+      <!-- Quick action cards grid -->
       <div class="info">
         <div class="quick-actions">
           <a href="../view/finddriver.php" class="quick-action">
@@ -165,6 +171,7 @@ $gender = getGender();
       </div>
     </div>
   </div>
+  <!-- External scripts -->
   <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
 </body>
 

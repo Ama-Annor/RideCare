@@ -1,4 +1,6 @@
-/**addrhc.js */
+
+
+// Handle form submission when submit button is clicked
 $("#submit").click(function (event) {
     event.preventDefault();
     var compname = $("#compname").val();
@@ -6,6 +8,7 @@ $("#submit").click(function (event) {
     var contactNum = $("#contactNum").val();
     var compemail = $("#compemail").val();
   
+    // Validate form fields
     if (compname == null || compname == "") {
       $("#error").html("Company Name can't be blank");
       return false;
@@ -23,6 +26,7 @@ $("#submit").click(function (event) {
     $("#error").html("");
     $("#success").html("");
   
+    // Submit form data via AJAX
     $.ajax({
       url: "../actions/addrhc_action.php",
       method: "post",

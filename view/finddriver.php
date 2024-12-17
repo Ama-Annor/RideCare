@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
@@ -9,6 +10,7 @@ $gender = getGender();
 <html lang="en">
 
 <head>
+    <!-- Meta tags and resources -->
     <meta charset="UTF-8">
     <title>Find Driver</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
@@ -19,6 +21,7 @@ $gender = getGender();
 <body style="background-color: #f5f7fa !important;">
     <div class="wrapper">
         <?php if ($user_role == 1) { ?>
+            <!-- Admin sidebar navigation -->
             <div class="sidebar">
                 <div class="logo">
                     <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
@@ -33,7 +36,7 @@ $gender = getGender();
                 </ul>
             </div>
         <?php } else { ?>
-
+            <!-- User sidebar navigation -->
             <div class="sidebar">
                 <div class="logo">
                     <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -50,10 +53,12 @@ $gender = getGender();
                 </ul>
             </div>
         <?php } ?>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
                 <div class="headtext">Find Driver</div>
             </div>
+            <!-- Search interface -->
             <div class="info" id="searchinfo">
                 <div class="searchboxwrapper" id="searchboxwrapper">
                     <div class="searchboxitem searchboxitem1">
@@ -67,24 +72,27 @@ $gender = getGender();
                     </div>
 
                 </div>
+                <!-- Error message display -->
                 <div class="error" id="error" style="color:#008080; display: flex; justify-content: center; align-items: center; margin-top:20px; font-size: 24px; font-weight: bold;"> </div>
 
+                <!-- Search results container -->
                 <div class="results" id="results" style="width:80%; display: flex; margin-left:70px; align-items: center;">
                 </div>
 
+                <!-- Footer tagline -->
                 <div style="position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); text-align: center; opacity: 0.7;">
                     <h1 style="color: #666;">
                     Ride Care: Your Journey, Your Safety, Our Priority. 
                     </h1>
                 </div>
 
-
-
             </div>
         </div>
     </div>
+    <!-- Scripts -->
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/search.js"></script>
+    <!-- Back to top functionality -->
     <script>
         $(document).ready(function() {
             $(window).scroll(function() {

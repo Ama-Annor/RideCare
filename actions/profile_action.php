@@ -1,5 +1,5 @@
 <?php
-/*profile_action.php */
+
 
 
 header('Access-Control-Allow-Origin:*');

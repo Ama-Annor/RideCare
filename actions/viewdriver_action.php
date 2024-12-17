@@ -1,6 +1,6 @@
 <?php
-/*viewrhc_action.php */
 
+// Set HTTP headers for API response
 header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Method: GET');

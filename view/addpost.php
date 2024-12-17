@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
@@ -9,6 +10,7 @@ $gender = getGender();
 <html lang="en">
 
 <head>
+    <!-- Page meta and resource includes -->
     <meta charset="UTF-8">
     <title>Add Post</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
@@ -18,6 +20,7 @@ $gender = getGender();
 
 <body>
     <div class="wrapper">
+        <!-- Sidebar navigation -->
         <div class="sidebar">
             <div class="logo">
                 <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -33,10 +36,12 @@ $gender = getGender();
                 <?php } ?> <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
             </ul>
         </div>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
                 <div class="headtext">Add Post</div>
             </div>
+            <!-- Post submission form -->
             <div class="info">
                     <div class="center">
                         <p>Share your thoughts with us.</p>
@@ -54,10 +59,9 @@ $gender = getGender();
             </div>
         </div>
     </div>
+    <!-- External scripts -->
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/addpost.js"></script>
 </body>
 
 </html>
-
-

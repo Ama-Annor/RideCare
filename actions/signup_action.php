@@ -1,5 +1,5 @@
 <?php
-/*signup_action.php */
+
 
 header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');

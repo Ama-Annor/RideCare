@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
@@ -9,6 +10,7 @@ $gender = getGender();
 <html lang="en">
 
 <head>
+    <!-- Meta tags and resource includes -->
     <meta charset="UTF-8">
     <title>Driver Detail</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
@@ -19,6 +21,7 @@ $gender = getGender();
 <body>
     <div class="wrapper">
         <?php if ($user_role == 1) { ?>
+            <!-- Admin sidebar navigation -->
             <div class="sidebar">
                 <div class="logo">
                     <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
@@ -33,6 +36,7 @@ $gender = getGender();
                 </ul>
             </div>
         <?php } else { ?>
+            <!-- User sidebar navigation -->
             <div class="sidebar">
                 <div class="logo">
                     <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -49,10 +53,12 @@ $gender = getGender();
                 </ul>
             </div>
         <?php } ?>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
                 <div class="headtext">Driver Detail</div>
             </div>
+            <!-- Driver profile information -->
             <div class="info">
                 <div class="userprof">
                     <div class="username" id="username">
@@ -74,7 +80,8 @@ $gender = getGender();
                     </div>
                     <div id="reviews">
                     </div>
-                    <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color: white;
+                    <!-- Back to top button (commented out) -->
+                    <!-- <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color: white;
   background-color: #008080;
   width: 30px;
   height: 30px;
@@ -84,16 +91,18 @@ $gender = getGender();
   right: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;"></i>
+  align-items: center;"></i> -->
                 </div>
             </div>
         </div>
     </div>
     </div>
+    <!-- External scripts -->
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/driverdetails.js"> </script>
     <script src="../js/driverreviews.js"> </script>
     <script src="../js/deletereview.js"></script>
+    <!-- Review deletion confirmation handler -->
     <script>
         function confirmDelete(revid, did) {
             if (confirm("Are you sure you want to delete this review?")) {
@@ -122,6 +131,7 @@ $gender = getGender();
             }
         }
     </script>
+    <!-- Back to top button functionality -->
     <script>
         $(document).ready(function() {
             $(window).scroll(function() {

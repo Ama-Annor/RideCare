@@ -10,7 +10,7 @@ $gender = getGender();
 
 <head>
     <meta charset="UTF-8">
-    <title>Report an Incident</title>
+    <title>Submit an Incident Report</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -223,7 +223,7 @@ $gender = getGender();
         </div>
         <div class="main_content">
             <div class="header">
-                <div class="headtext">Report Incident</div>
+                <div class="headtext">Incident Report Submission</div>
             </div>
             <div class="info">
                 <div class="reptform">
@@ -238,7 +238,7 @@ $gender = getGender();
                                 <option value="">Select Driver Name</option>
                             </select>
                             <br>
-                            <label for="incidentDate">Incident Description:</label>
+                            <label for="incidentDate">Description of Incident:</label>
                             <br>
                             <textarea id="incidentDescription" name="report_description" required></textarea>
                             <br>

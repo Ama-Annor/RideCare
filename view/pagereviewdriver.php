@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
@@ -8,6 +9,7 @@ $user_id = getUserID();
 <html lang="en">
 
 <head>
+    <!-- Meta tags and resource includes -->
     <meta charset="UTF-8">
     <title>Review Driver</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
@@ -18,6 +20,7 @@ $user_id = getUserID();
 <body>
     <div class="wrapper">
         <?php if ($user_role == 1) { ?>
+            <!-- Admin sidebar navigation -->
             <div class="sidebar">
                 <div class="logo">
                     <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
@@ -32,6 +35,7 @@ $user_id = getUserID();
                 </ul>
             </div>
         <?php } else { ?>
+            <!-- User sidebar navigation -->
             <div class="sidebar">
                 <div class="logo">
                     <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -48,12 +52,15 @@ $user_id = getUserID();
                 </ul>
             </div>
         <?php } ?>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
                 <div class="headtext">Review Driver</div>
             </div>
+            <!-- Review form container -->
             <div class="info">
                 <div class="reptform">
+                    <!-- Left side content with icon and text -->
                     <div class="left-side">
                         <i class="fa-brands fa-speakap" style="color:#008080; font-size: 200px"></i>
                         <div class="shorttext">
@@ -63,12 +70,14 @@ $user_id = getUserID();
                                 saying if</span>.
                         </div>
                     </div>
+                    <!-- Right side with review form -->
                     <div class="right-side">
                         <p>Your feedback is invaluable in ensuring a safe and enjoyable experience for all passengers.
                         </p>
                         <form class="form" id="form">
                             <div id="error" class="error"></div>
                             <div id="success" class="success"></div>
+                            <!-- Star rating section -->
                             <div class="ratingsstar">
                                 <div class="rating-box">
                                     <header>How was your experience?</header>
@@ -82,6 +91,7 @@ $user_id = getUserID();
                                 </div>
                             </div>
                             <br>
+                            <!-- Review description input -->
                             <label for="review">Review Description:</label>
                             <br>
                             <textarea id="ReviewDescription" name="review_description" required></textarea>
@@ -93,6 +103,7 @@ $user_id = getUserID();
             </div>
         </div>
     </div>
+    <!-- External scripts -->
     <script src="../js/rating.js"></script>
     <script src="../js/pagereviewdriver.js"></script>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>

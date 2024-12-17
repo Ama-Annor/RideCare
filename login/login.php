@@ -1,9 +1,10 @@
-<!-- login.php  -->
+<!-- login.php - Main login page with form -->
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Meta tags and resources -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,12 +14,14 @@
 </head>
 
 <body>
+    <!-- Main container with logo and login form -->
     <div class="parent">
         <div class="logo">
             <img src="../images/logo.png" alt="site logo" height="150px">
         </div>
         <div class="container" style="float: right;">
             <input type="checkbox" id="check">
+            <!-- Login form section -->
             <div class="form">
                 <header>Login</header>
                 <form method="post">
@@ -29,6 +32,7 @@
                     <input type="password" placeholder="Enter your password" name="passwrd" id="password">
                     <button type="submit" class="button" id="submit" name="submit_button">Login</button>
                 </form>
+                <!-- Signup link section -->
                 <div class="signup">
                     <span class="signup">Don't have an account?
                         <label for="check"><a href="signup.php">Signup<a></label>
@@ -38,6 +42,7 @@
 
         </div>
     </div>
+    <!-- Error handling script -->
     <script>
         // Show error div only when there are errors
         const errorDiv = document.getElementById('error');
@@ -57,6 +62,7 @@
             subtree: true 
         });
     </script>
+    <!-- Main login functionality script -->
     <script src="../js/login.js"></script>
 
 </body>

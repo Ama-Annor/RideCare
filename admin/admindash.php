@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 
 ifLoggedIn();
@@ -14,10 +15,11 @@ if ($user_role != 1) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin Home</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Styles for quick action cards and layout -->
     <style>
         .quick-actions {
             display: flex;
@@ -61,8 +63,12 @@ if ($user_role != 1) {
     </style>
 </head>
 
+<!-- Admin dashboard for managing RideCare system -->
+
 <body style="background-color: #f5f7fa !important;">
+    <!-- Main wrapper container -->
     <div class="wrapper">
+        <!-- Sidebar navigation -->
         <div class="sidebar">
             <div class="logo">
                 <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
@@ -77,10 +83,12 @@ if ($user_role != 1) {
             </ul>
 
         </div>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
-                <div class="headtext">Admin Home</div>
+                <div class="headtext">Admin Dashboard</div>
             </div>
+            <!-- Quick action cards grid -->
             <div class="info">
                 <div class="quick-actions">
                     <a href="../view/finddriver.php" class="quick-action">
@@ -108,6 +116,7 @@ if ($user_role != 1) {
             </div>
         </div>
     </div>
+    <!-- External scripts -->
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
 
 </body>

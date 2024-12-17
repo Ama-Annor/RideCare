@@ -1,4 +1,4 @@
-<!-- rhcdisplay.php -->
+<!-- Main RHC display page for viewing all ride-hailing companies -->
 <?php
 include "../settings/core.php";
 
@@ -13,6 +13,7 @@ if ($user_role != 1) {
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Header section with meta tags and resources -->
 <head>
     <meta charset="UTF-8">
     <title>All Ride-Hailing Companies</title>
@@ -23,7 +24,9 @@ if ($user_role != 1) {
 </head>
 
 <body>
+    <!-- Main wrapper container -->
     <div class="wrapper">
+        <!-- Sidebar navigation -->
         <div class="sidebar">
             <div class="logo">
                 <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
@@ -38,11 +41,14 @@ if ($user_role != 1) {
             </ul>
 
         </div>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
                 <div class="headtext">All Ride-Hailing Companies</div>
             </div>
+            <!-- Add company button section -->
             <div class="info" style="display:flex; justify-content:flex-end; margin-bottom:20px; margin-right:60px; text-align:inline"><a href="../admin/rhcadd.php"><button style="width: 150px; padding: 10px; font-size: 16px;">Add Company</button></a></div>
+            <!-- Table display section -->
             <div class="info">
                 <table>
                     <thead>
@@ -51,6 +57,8 @@ if ($user_role != 1) {
                             <th>Location</th>
                             <th>Contact Number</th>
                             <th>Email</th>
+                            <!-- Import delete btn functionality from view/viewreports.php to this page -->
+                            <th>Actions</th> 
                         </tr>
                     </thead>
                     <tbody id="display_rhc_data">
@@ -62,6 +70,7 @@ if ($user_role != 1) {
         </div>
     </div>
     </div>
+    <!-- External scripts -->
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/viewrhc.js">
         const urlParams = new URLSearchParams(window.location.search);

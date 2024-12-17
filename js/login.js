@@ -1,4 +1,4 @@
-/**login.js */
+//Login
 $("#submit").click(function (event) {
     event.preventDefault();
     var name = $("#username").val();

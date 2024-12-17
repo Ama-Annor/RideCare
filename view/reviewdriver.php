@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
@@ -9,6 +10,7 @@ $gender = getGender();
 <html lang="en">
 
 <head>
+    <!-- Meta tags and resources -->
     <meta charset="UTF-8">
     <title>Review Driver</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
@@ -25,6 +27,7 @@ $gender = getGender();
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
+        /* Center content wrapper */
         .center {
             width: 100%;
         }
@@ -43,6 +46,7 @@ $gender = getGender();
             gap: 1.5rem;
         }
 
+        /* Input field styling */
         .input-field,
         select,
         textarea {
@@ -55,6 +59,7 @@ $gender = getGender();
             background: #f8f9fa;
         }
 
+        /* Focus states for form elements */
         .input-field:focus,
         select:focus,
         textarea:focus {
@@ -202,6 +207,7 @@ $gender = getGender();
 
 <body style="background-color: #f5f7fa !important;">
     <div class="wrapper">
+        <!-- Sidebar navigation -->
         <div class="sidebar">
             <div class="logo">
                 <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -218,15 +224,18 @@ $gender = getGender();
                 <?php } ?> <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
             </ul>
         </div>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
                 <div class="headtext">Review Driver</div>
             </div>
+            <!-- Review form container -->
             <div class="info">
                 <div class="reptform">
                     <div class="center">
                         <p>Ensuring a safe and enjoyable experience for all passengers starts with your feedback.
                         </p>
+                        <!-- Driver review form -->
                         <form class="form" id="form">
                             <div id="error" class="error"></div>
                             <input type="text" id="firstName" name="fname" class="input-field" placeholder="Driver First Name" required>
@@ -245,6 +254,7 @@ $gender = getGender();
                             <input type="text" id="carModel" name="model" class="input-field" placeholder="Model">
                             <input type="text" id="carColor" name="color" class="input-field" placeholder="Color" required>
                             <input type="text" id="plateNumber" name="plate_number" class="input-field" pattern="^[A-Z]{2,3}-\d{1,4}-[A-Z]?$|^[\d]{1,4}-[A-Z]{2,3}-[A-Z]?$|^[A-Z]{1,2}-\d{1,4}$" placeholder="Car Plate Number" required>
+                            <!-- Star rating section -->
                             <div class="ratingsstar">
                                 <div class="rating-box">
                                     <header>Rate your experience?</header>
@@ -274,8 +284,10 @@ $gender = getGender();
             </div>
         </div>
     </div>
+    <!-- Scripts -->
     <script src="../js/rating.js"></script>
     <script>
+        // Load ride-hailing companies on page load
         $(document).ready(function() {
             $.ajax({
                 url: '../actions/viewrhc_action.php',

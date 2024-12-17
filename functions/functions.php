@@ -78,6 +78,7 @@ function likePost($input_data)
     }
 }
 
+//Showing the Incident Report
 function viewIncidentReport()
 {
     global $conn;
@@ -120,6 +121,8 @@ function viewIncidentReport()
         return json_encode($data);
     }
 }
+
+//Showing the Driver List
 function viewDriverList()
 {
     global $conn;
@@ -156,6 +159,8 @@ function viewDriverList()
     }
 }
 
+
+//Deleting a Review
 function deleteReview($input_data)
 {
     global $conn;
@@ -180,6 +185,8 @@ function deleteReview($input_data)
         return json_encode($data);
     }
 }
+
+//Editing a Review
 function editReview($input_data)
 {
     global $conn;
@@ -214,7 +221,9 @@ function editReview($input_data)
             return json_encode($data);
         }
     }
-}
+ }
+
+//Adding a Review
 function pagereviewDriver($input_data)
 {
     global $conn;
@@ -252,6 +261,8 @@ function pagereviewDriver($input_data)
         }
     }
 }
+
+//Reporting an Incident
 function reportIncident($input_data)
 {
     global $conn;
@@ -291,6 +302,7 @@ function reportIncident($input_data)
     }
 }
 
+//Getting Driver Reviews
 function getDriverReviews($input_data)
 {
     global $conn;
@@ -328,6 +340,8 @@ function getDriverReviews($input_data)
         return json_encode($data);
     }
 }
+
+//Getting Driver Details
 function getDriverDetails($input_data)
 {
     global $conn;
@@ -387,48 +401,65 @@ function getDriverDetails($input_data)
         return json_encode($data);
     }
 }
-function getProfile()
-{
+
+//Getting Profile Details
+function getProfile() {
     global $conn;
     $userid = $_SESSION['user_id'];
-    $sql = "SELECT User.*, DriverReviews.*, Post.*, COUNT(DriverReviews.revid) AS reviewcount,
-    COUNT(Post.posid) AS postcount
-    FROM User 
-    LEFT JOIN DriverReviews ON User.uid = DriverReviews.uid 
-    LEFT JOIN Post ON User.uid = Post.creator 
-    WHERE User.uid = '$userid'";
-    $result = mysqli_query($conn, $sql);
+    
+    // Separate queries for better reliability
+    $user_query = "SELECT * FROM User WHERE uid = ?";
+    $stmt = $conn->prepare($user_query);
+    $stmt->bind_param("i", $userid);
+    $stmt->execute();
+    $user_result = $stmt->get_result();
 
-    if ($result) {
-        if (mysqli_num_rows($result) == 1) {
-            $final_result = mysqli_fetch_assoc($result);
+    if (!$user_result) {
+        return json_encode([
+            'status' => 500,
+            'message' => 'Database error: ' . $conn->error
+        ]);
+    }
 
-            $data = [
-                'status' => 200,
-                'message' => 'Profile Details Found',
-                'data' => $final_result,
-                'user_id' => $userid
-            ];
-            header("HTTP/1.0 200 Profile Details Found");
-            return json_encode($data);
-        } else {
-            $data = [
-                'status' => 404,
-                'message' => 'No Profile Found',
-            ];
-            header("HTTP/1.0 404 No Profile Found");
-            return json_encode($data);
-        }
+    $user_data = $user_result->fetch_assoc();
+
+    // Get review count
+    $review_count_query = "SELECT COUNT(*) as review_count FROM DriverReviews WHERE uid = ?";
+    $stmt = $conn->prepare($review_count_query);
+    $stmt->bind_param("i", $userid);
+    $stmt->execute();
+    $review_count = $stmt->get_result()->fetch_assoc()['review_count'];
+
+    // Get post count
+    $post_count_query = "SELECT COUNT(*) as post_count FROM Post WHERE creator = ?";
+    $stmt = $conn->prepare($post_count_query);
+    $stmt->bind_param("i", $userid);
+    $stmt->execute();
+    $post_count = $stmt->get_result()->fetch_assoc()['post_count'];
+
+    if ($user_data) {
+        $data = [
+            'status' => 200,
+            'message' => 'Profile Details Found',
+            'data' => array_merge($user_data, [
+                'reviewcount' => $review_count,
+                'postcount' => $post_count
+            ]),
+            'user_id' => $userid
+        ];
+        header("HTTP/1.0 200 Profile Details Found");
+        return json_encode($data);
     } else {
         $data = [
-            'status' => 500,
-            'message' => 'Internal Serval Error',
+            'status' => 404,
+            'message' => 'No Profile Found'
         ];
-        header("HTTP/1.0 500 Internal Serval Error");
+        header("HTTP/1.0 404 No Profile Found");
         return json_encode($data);
     }
 }
 
+//Searching for Drivers
 function searchDrivers($input_data)
 {
     global $conn;
@@ -503,6 +534,7 @@ function searchDrivers($input_data)
     }
 }
 
+//Deleting a Post
 function deletePost($input_data)
 {
     global $conn;
@@ -528,6 +560,7 @@ function deletePost($input_data)
     }
 }
 
+//Getting Posts
 function getPosts()
 {
     global $conn;
@@ -555,6 +588,8 @@ function getPosts()
         return json_encode($data);
     }
 }
+
+//Reviewing a Driver
 function reviewDriver($input_data)
 {
     global $conn;
@@ -686,6 +721,8 @@ function reviewDriver($input_data)
         }
     }
 }
+
+//Getting Ride-Hailing Companies
 function viewRideHailingCompanies()
 {
     global $conn;
@@ -722,6 +759,7 @@ function viewRideHailingCompanies()
     }
 }
 
+//Validating Data
 function validate($data)
 {
     global $conn;
@@ -773,7 +811,7 @@ function addPost($input_data)
     }
 }
 
-
+//Adding a Ride-Hailing Company
 function addRideHailingCompany($input_data)
 {
     global $conn;
@@ -836,6 +874,8 @@ function addRideHailingCompany($input_data)
         }
     }
 }
+
+//Adding a User
 function signupUser($user_data)
 {
     global $conn;
@@ -910,6 +950,7 @@ function signupUser($user_data)
     }
 }
 
+//Logging in a User
 function loginUser($user_data)
 {
     global $conn;
@@ -967,5 +1008,44 @@ function loginUser($user_data)
             header("HTTP/1.0 500 Internal Serval Errorr");
             return json_encode($data);
         }
+    }
+}
+
+//Deleting a Ride-Hailing Company
+function deleteCompany($input_data)
+{
+    global $conn;
+    $companyId = $input_data->comid;
+
+    // First check if company exists
+    $checkSql = "SELECT * FROM RideHailingCompany WHERE comid='$companyId'";
+    $checkResult = mysqli_query($conn, $checkSql);
+
+    if (mysqli_num_rows($checkResult) === 0) {
+        $data = [
+            'status' => 404,
+            'message' => 'Company not found',
+        ];
+        header("HTTP/1.0 404 Company not found");
+        return json_encode($data);
+    }
+
+    $sql = "DELETE FROM RideHailingCompany WHERE comid='$companyId'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $data = [
+            'status' => 201,
+            'message' => 'Company Deleted Successfully',
+        ];
+        header("HTTP/1.0 201 Company Deleted Successfully");
+        return json_encode($data);
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Server Error',
+        ];
+        header("HTTP/1.0 500 Internal Server Error");
+        return json_encode($data);
     }
 }

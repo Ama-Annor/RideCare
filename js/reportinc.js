@@ -1,18 +1,21 @@
-/**reportinc.js */
+// Wait for DOM content to load before executing
 document.addEventListener("DOMContentLoaded", function () {
     let selectedDriver = "";
   
     $("#error").html("");
     $("#success").html("");
   
+    // Handle driver selection change
     $("#driverSelect").change(function () {
       selectedDriver = $(this).val();
     });
   
+    // Handle form submission
     $("#submit").click(function (event) {
       event.preventDefault();
       var incidentDate = $("#incidentDate").val();
   
+      // Validate incident date range
       var selectedDate = new Date(incidentDate);
       var currentDate = new Date();
       var minDate = new Date("2010-01-01");
@@ -22,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       var incidentDescription = $("#incidentDescription").val();
   
+      // Validate form fields
       if (selectedDriver == null || selectedDriver.trim() === "") {
         $("#error").html("Selected Driver can't be blank");
         return false;
@@ -36,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return false;
       }
   
+      // Submit incident report via AJAX
       $.ajax({
         url: "../actions/reportinc_action.php",
         method: "post",

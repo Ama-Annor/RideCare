@@ -1,4 +1,5 @@
 <?php
+// Core includes and user authentication
 include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
@@ -8,6 +9,7 @@ $user_id = getUserID();
 <html lang="en">
 
 <head>
+    <!-- Meta tags and resource includes -->
     <meta charset="UTF-8">
     <title>Find Driver</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
@@ -19,6 +21,7 @@ $user_id = getUserID();
 <body>
     <div class="wrapper">
         <?php if ($user_role == 1) { ?>
+            <!-- Admin sidebar navigation -->
             <div class="sidebar">
                 <div class="logo">
                     <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
@@ -33,6 +36,7 @@ $user_id = getUserID();
                 </ul>
             </div>
         <?php } else { ?>
+            <!-- User sidebar navigation -->
             <div class="sidebar">
                 <div class="logo">
                     <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -49,10 +53,12 @@ $user_id = getUserID();
                 </ul>
             </div>
         <?php } ?>
+        <!-- Main content area -->
         <div class="main_content">
             <div class="header">
                 <div class="headtext">Find Driver</div>
             </div>
+            <!-- Search interface and results section -->
             <div class="info" id="searchinfo">
                 <div class="searchboxwrapper" id="searchboxwrapper">
                     <div class="searchboxitem searchboxitem1">
@@ -73,9 +79,11 @@ $user_id = getUserID();
         </div>
     </div>
     </div>
+    <!-- External scripts -->
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/search.js">
     </script>
+    <!-- Back to top button functionality -->
     <script>
         $(document).ready(function() {
             $(window).scroll(function() {

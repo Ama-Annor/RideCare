@@ -1,5 +1,15 @@
-/**driverdetails.js */
+/**
+ * Driver Details JavaScript Module
+ * Handles fetching and displaying driver information on the driver details page
+ */
+
+// Wait for DOM to be fully loaded before executing
 document.addEventListener("DOMContentLoaded", function () {
+    /**
+     * Extracts URL parameter value by name
+     * @param {string} name - The parameter name to extract
+     * @returns {string} The decoded parameter value or empty string if not found
+     */
     function getUrlParameter(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
@@ -8,7 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
         ? ""
         : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
+
+    // Get driver ID from URL parameters
     var driverId = getUrlParameter("did");
+
+    // Make AJAX request to fetch driver details
     $.ajax({
       url: "../actions/driverdetail_action.php",
       method: "post",
@@ -19,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data.status == 200) {
           response = data;
   
+          // Update DOM elements with driver information
           document.getElementById("drivername").innerHTML =
             response.data.driver_fname + " " + response.data.driver_lname;
           document.getElementById("carplate").innerHTML =
@@ -28,17 +43,23 @@ document.addEventListener("DOMContentLoaded", function () {
             response.data.review_count;
           document.getElementById("rhcomp").innerHTML =
             response.data.company_name;
+
+          // Set default rating to 0 if not available
           if (!response.data.average_rating) {
             response.data.average_rating = 0;
           }
           document.getElementById("avgrating").innerHTML =
             response.data.average_rating;
+
+          // Display car details
           document.getElementById("cardetails").innerHTML =
             response.data.car_color +
             " " +
             response.data.car_make +
             " " +
             response.data.car_model;
+
+          // Display gender (1 = Male, 2 = Female)
           if (response.data.gender == 1) {
             document.getElementById("gender").innerHTML = "Male";
           } else {
@@ -47,8 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       },
       error: (error) => {
-        //   var responseData = JSON.parse(error.responseText);
-        //   document.getElementById("error").innerHTML = responseData.message;
+        // Log any errors that occur during the AJAX request
         console.log(error);
       },
     });

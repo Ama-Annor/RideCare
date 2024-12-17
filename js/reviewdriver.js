@@ -1,10 +1,13 @@
-/**reviewdriver.js */
+
+// Event listener for when DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
+    // Initialize star rating functionality
     const stars = document.querySelectorAll(".stars i");
   
     let selectedStar = 0;
     let selectedCompany = "";
   
+    // Handle star rating selection
     stars.forEach((star, index1) => {
       star.addEventListener("click", () => {
         selectedStar = index1 + 1;
@@ -16,9 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   
+    // Handle ride-hailing company selection
     $("#rideHailingCompany").change(function () {
       selectedCompany = $(this).val();
     });
+
+    // Handle form submission
     $("#submit").click(function (event) {
       event.preventDefault();
       var dfname = $("#firstName").val();
@@ -33,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var plateNumber = $("#plateNumber").val();
       var reviewDescription = $("#ReviewDescription").val();
   
+      // Form validation checks
       if (dfname == null || dfname.trim() === "") {
         alert("Driver First Name can't be blank");
         return false;
@@ -74,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return false;
       }
   
+      // Submit review data via AJAX
       $.ajax({
         url: "../actions/reviewdriver_action.php",
         method: "post",
@@ -94,19 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         success: (data, status) => {
           console.log(data, status);
           if (data.status == 201) {
-            // response = data;
-  
-            // let result = "";
-  
-            // response.data.forEach((element) => {
-            //   result += "<tr>";
-            //   result += "<td class='rhcname'>" + element.company_name + "</td>";
-            //   result +=
-            //     "<td class='contactnum'>" + element.contact_number + "</td>";
-            //   result += "<td class='email'>" + element.email + "</td>";
-            //   result += "<td class='location'>" + element.location + "</td>";
-            //   result += "</tr>";
-            // });
+
             window.location.href =
               "../view/driverdetails.php?did=" + data.driverId;
           }
