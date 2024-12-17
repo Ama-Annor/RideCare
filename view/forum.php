@@ -33,7 +33,7 @@ $gender = getGender();
                 </div>
                 <ul>
                     <li><a href="../admin/admindash.php"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
+                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Locate Driver</a></li>
                     <li><a href="../view/viewreports.php"><i class="fas fa-comments"></i></i>View Reports</a></li>
                     <li><a href="../admin/rhcadd.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
                     <?php if ($gender == 2 && $user_role == 1) { ?> <li><a href="../view/forum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
@@ -49,7 +49,7 @@ $gender = getGender();
                 <ul>
                     <li><a href="../view/userdash.php"><i class="fas fa-home"></i>Home</a></li>
                     <li><a href="../view/userprofile.php"><i class="fas fa-user"></i>Profile</a></li>
-                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
+                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Locate Driver</a></li>
                     <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
                     <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                     <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>

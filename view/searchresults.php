@@ -11,7 +11,7 @@ $user_id = getUserID();
 <head>
     <!-- Meta tags and resource includes -->
     <meta charset="UTF-8">
-    <title>Find Driver</title>
+    <title>Locate Driver</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -28,7 +28,7 @@ $user_id = getUserID();
                 </div>
                 <ul>
                     <li><a href="../admin/admindash.php"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
+                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Located Driver</a></li>
                     <li><a href="../view/viewreports.php"><i class="fas fa-comments"></i></i>View Reports</a></li>
                     <li><a href="../admin/rhcadd.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
                     <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/forum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
@@ -44,7 +44,7 @@ $user_id = getUserID();
                 <ul>
                     <li><a href="../view/userdash.php"><i class="fas fa-home"></i>Home</a></li>
                     <li><a href="../view/userprofile.php"><i class="fas fa-user"></i>Profile</a></li>
-                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
+                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Locate Driver</a></li>
                     <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
                     <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                     <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>
@@ -56,7 +56,7 @@ $user_id = getUserID();
         <!-- Main content area -->
         <div class="main_content">
             <div class="header">
-                <div class="headtext">Find Driver</div>
+                <div class="headtext">Locate Driver</div>
             </div>
             <!-- Search interface and results section -->
             <div class="info" id="searchinfo">

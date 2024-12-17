@@ -129,7 +129,7 @@ $gender = getGender();
       <ul>
         <li><a href="../view/userdash.php"><i class="fas fa-home"></i>Home</a></li>
         <li><a href="../view/userprofile.php"><i class="fas fa-user"></i>Profile</a></li>
-        <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
+        <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> LocateDriver</a></li>
         <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i> Review Driver</a></li>
         <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i> Report Incident</a></li>
         <?php if ($gender == 2 || $user_role == 1) { ?> <li><a href="../view/forum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
@@ -147,7 +147,7 @@ $gender = getGender();
         <div class="quick-actions">
           <a href="../view/finddriver.php" class="quick-action">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <span>Find Driver</span>
+            <span>Locate Driver</span>
           </a>
           <a href="../view/reviewdriver.php" class="quick-action">
             <i class="fas fa-comments"></i>

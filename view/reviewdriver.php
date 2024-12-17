@@ -215,7 +215,7 @@ $gender = getGender();
             <ul>
                 <li><a href="../view/userdash.php"><i class="fas fa-home"></i>Home</a></li>
                 <li><a href="../view/userprofile.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
+                <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Locate Driver</a></li>
                 <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
                 <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
 
