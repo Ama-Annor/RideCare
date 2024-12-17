@@ -1,5 +1,5 @@
 
-**Ride Care**
+**Ride Care:**
 Ride Care is a web-based platform designed to improve the safety and reliability of ride-hailing services. It enables users to review drivers, report incidents, and engage with a supportive community to help identify and avoid poorly reviewed drivers.
 
 **Key Features:**
@@ -30,5 +30,5 @@ Forum: A community forum where users can discuss their experiences, share tips, 
 
 Logout: Allows users to securely log out of the application.
 
-**Deployment**
+**Deployment: **
 Ride Care has been hosted on a live server, making it accessible to users from any location.
