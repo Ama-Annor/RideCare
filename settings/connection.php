@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root"; //ama.annor
-$password = "";
-$database = "rideCare"; //webtech_fall2024_ama_annor
+$username = "root"; //root ama.annor
+$password = ""; 
+$database = "rideCare"; //rideCare  webtech_fall2024_ama_annor
 
 $conn = new mysqli($servername, $username, $password, $database);
 

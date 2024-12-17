@@ -22,43 +22,103 @@ if ($user_role != 1) {
     <!-- Styles for quick action cards and layout -->
     <style>
         .quick-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 1.5rem;
+            max-width: calc(100% - 225px); /* Account for sidebar width */
+            margin: 0 auto;
         }
 
         .quick-actions a {
             text-decoration: none;
-            color: #333;
+            color: #008080;
         }
 
         .quick-action {
-            width: 200px;
-            height: 200px;
-            background-color: #f2f2f2;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-height: 180px;
+            border: 1px solid transparent;
+        }
+
+        .quick-action::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #008080, #006666);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
         }
 
         .quick-action:hover {
-            background-color: #e0e0e0;
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+            border-color: #008080;
+        }
+
+        .quick-action:hover::before {
+            opacity: 0.05;
         }
 
         .quick-action i {
-            font-size: 48px;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #008080;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .quick-action:hover i {
+            transform: scale(1.1);
         }
 
         .quick-action span {
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            transition: color 0.3s ease;
+            background: linear-gradient(135deg, #008080, #006666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0.3rem 0;
+        }
+
+        .quick-action:hover span {
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 1200px) {
+            .quick-actions {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .quick-actions {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .quick-action {
+                min-height: 160px;
+            }
         }
     </style>
 </head>
